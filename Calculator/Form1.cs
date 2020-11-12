@@ -391,13 +391,20 @@ namespace Calculator
 
             string str = label1.Text;
 
-            if (label1.Text!=""&&num_switch&&str.Length>1)
+            if (label1.Text!=""&&num_switch)
             {
-                number_lab1 = Convert.ToDouble(label1.Text);
-                label1.Text += "-";
+                if (str=="-")
+                {
+                    label1.Text = "-";
+                }
+                else
+                {
+                    number_lab1 = Convert.ToDouble(label1.Text);
+                    label1.Text += "-";
 
-                m_switch();
-                ch = '-';
+                    m_switch();
+                    ch = '-';
+                }
             }
 
             if (label1.Text=="")
